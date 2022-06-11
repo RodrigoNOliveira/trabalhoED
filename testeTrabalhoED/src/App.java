@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         
     Random gerador = new Random();
-    int[] vetor = new int [1000000];
+    int[] vetor = new int [1000];
     
     System.out.println();
     System.out.println("Inicio tudo: " + System.currentTimeMillis());
@@ -48,7 +48,15 @@ public class App {
         Simples.selectionSort(vetor);
         System.out.println("SelectionSort: " +System.currentTimeMillis());
         
-        
+        for (int i = 0; i < vetor.length; i++) {
+            int x = gerador.nextInt(1000);
+            vetor[i] = x;
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("Inicio quicksort: " + System.currentTimeMillis());
+        Sofisticado.quicksort(vetor, 0,vetor.length-1);
+        System.out.println("quicksort: " +System.currentTimeMillis());
 
     
     System.out.println();
